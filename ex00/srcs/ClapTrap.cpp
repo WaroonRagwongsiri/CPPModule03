@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 13:30:23 by waroonwork@       #+#    #+#             */
-/*   Updated: 2026/06/27 13:57:21 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2026/06/27 14:05:18 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ClapTrap::ClapTrap()
 	this->hit_point = 10;
 	this->energy_point = 10;
 	this->attack_dmg = 0;
+	std::cout << "ClapTrap " << this->name << " spawned" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name)
@@ -26,6 +27,7 @@ ClapTrap::ClapTrap(const std::string name)
 	this->hit_point = 10;
 	this->energy_point = 10;
 	this->attack_dmg = 0;
+	std::cout << "ClapTrap " << this->name << " spawned" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -34,6 +36,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	this->hit_point = other.hit_point;
 	this->energy_point = other.energy_point;
 	this->attack_dmg = other.attack_dmg;
+	std::cout << "ClapTrap " << this->name << " spawned" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
@@ -49,6 +52,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "ClapTrap " << this->name << " destroyed" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
