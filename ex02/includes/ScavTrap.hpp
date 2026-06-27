@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/27 13:44:55 by waroonwork@       #+#    #+#             */
-/*   Updated: 2026/06/27 14:35:51 by waroonwork@      ###   ########.fr       */
+/*   Created: 2026/06/27 14:01:54 by waroonwork@       #+#    #+#             */
+/*   Updated: 2026/06/27 14:10:07 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	// ClapTrap
-	std::cout << "--- Testing ClapTrap ---" << std::endl;
-	ClapTrap a("A");
-	a.attack("TargetA");
-	a.takeDamage(5);
-	a.beRepaired(5);
-	a.logInfo();
+	private:
+		/* data */
+	public:
+		ScavTrap();
+		ScavTrap(const std::string name);
+		ScavTrap(const ScavTrap& other);
+		ScavTrap& operator=(const ScavTrap& other);
+		~ScavTrap();
+		void attack(const std::string& target);
+		void guardGate();
+};
 
-	// ScavTrap
-	std::cout << "\n--- Testing ScavTrap ---" << std::endl;
-	ScavTrap c("C");
-	c.attack("TargetC");
-	c.guardGate();
-	c.logInfo();
-	return (0);
-}
+#endif

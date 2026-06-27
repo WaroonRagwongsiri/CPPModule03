@@ -6,11 +6,11 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 13:44:55 by waroonwork@       #+#    #+#             */
-/*   Updated: 2026/06/27 14:35:51 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2026/06/27 14:37:05 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
@@ -28,5 +28,16 @@ int	main(void)
 	c.attack("TargetC");
 	c.guardGate();
 	c.logInfo();
+
+	// FragTrap
+	std::cout << "\n--- Testing FragTrap ---" << std::endl;
+	FragTrap f("F");
+	f.attack("TargetF");
+	f.highFivesGuys();
+	f.logInfo();
+	std::cout << "FragTrap F HP: " << f.getHitPoints() << std::endl;
+	std::cout << "FragTrap F EP: " << f.getEnergyPoints() << std::endl;
+	std::cout << "FragTrap F AD: " << f.getAttackDamage() << std::endl;
+
 	return (0);
 }
