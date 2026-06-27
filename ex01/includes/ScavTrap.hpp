@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/27 13:44:55 by waroonwork@       #+#    #+#             */
-/*   Updated: 2026/06/27 14:26:31 by waroonwork@      ###   ########.fr       */
+/*   Created: 2026/06/27 14:01:54 by waroonwork@       #+#    #+#             */
+/*   Updated: 2026/06/27 14:10:07 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	// ClapTrap
-	ClapTrap a("A");
+	private:
+		/* data */
+	public:
+		ScavTrap();
+		ScavTrap(const std::string name);
+		ScavTrap(const ScavTrap& other);
+		ScavTrap& operator=(const ScavTrap& other);
+		~ScavTrap();
+		void attack(const std::string& target);
+		void guardGate();
+};
 
-	a.attack("B");
-	a.logInfo();
-	a.takeDamage(10);
-	a.logInfo();
-	a.beRepaired(10);
-	a.logInfo();
-	return (0);
-}
+#endif
